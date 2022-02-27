@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="fragments :: head"></head>
+<body>
+    <header th:replace="fragments :: toolbar"></header>
+    <div class="container">
+        <figure>
+            <blockquote class="blockquote">
+                <p th:text="${fish.genus+' '+fish.species}"><em><strong></strong></em></p>
+            </blockquote>
+            <figcaption class="blockquote-footer">
+                <cite title="Source Title" th:text="${fish.author}"></cite>
+            </figcaption>
+        </figure>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <img th:src="@{${fish.image}}" class="img-fluid" alt="fish"/>
+                </div>
+                <div class="col">
+
+                </div>
+            </div>
+        </div>
+        <p>Reino</p>
+        <hr class="w-100"/>
+        <p th:text="${fish.kingdom}"></p>
+        <p>Familia</p>
+        <hr class="w-100"/>
+        <p th:text="${fish.family}"></p>
+        <p>Autor</p>
+        <hr class="w-100"/>
+        <p th:text="${fish.author}"></p>
+        <p>Está extinto</p>
+        <hr class="w-100"/>
+        <p th:text="${fish.is_extinct} == 0 ? 'Não' : 'Sim'"></p>
+    </div>
+</body>
+</html>
